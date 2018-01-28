@@ -28,7 +28,7 @@ collections:
       - {label: "Path", name: "path", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Intro", name: "intro", widget: "markdown"}
+      - {label: "Intro", name: "comparison_intro", widget: "markdown"}
       - {label: "Products", name: "products", widget: "object", fields: [
           {label: Heading, name: heading, widget: string},
           {label: Description, name: description, widget: markdown},
