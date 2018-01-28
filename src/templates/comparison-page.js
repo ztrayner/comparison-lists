@@ -44,7 +44,7 @@ export default ({ data }) => {
         <ComparisonPageTemplate
             title={frontmatter.title}
             date={frontmatter.date}
-            intro={frontmatter.product_intro}
+            intro={frontmatter.comparison_intro}
             products={frontmatter.products}
             outro={frontmatter.outro}
             helmet={<Helmet title={`${frontmatter.title}`} />}
