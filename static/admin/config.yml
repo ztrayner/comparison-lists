@@ -19,6 +19,27 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
 
+  - name: "comparison"
+    label: "Product Comparison"
+    folder: "src/pages/comparisons"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "comparison-page"}
+      - {label: "Path", name: "path", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Intro", name: "intro", widget: "markdown"}
+      - {label: "Products", name: "products", widget: "object", fields: [
+          {label: Heading, name: heading, widget: string},
+          {label: Description, name: description, widget: markdown},
+          {label: Image, name: product_image, widget: image},
+          {label: Links, name: links, widget: list, fields: [
+            {label: Source, name: source, widget: string},
+            {label: Link, name: link, widget: string}]
+          }]
+        }
+      - {label: "Outro", name: "outro", widget: "markdown"}
+
   - name: "pages"
     label: "Pages"
     files:

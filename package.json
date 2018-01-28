@@ -34,6 +34,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-plugin-react": "^7.6.0",
     "prettier": "^1.7.4"
   }
 }
