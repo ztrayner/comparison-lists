@@ -5,7 +5,15 @@ import Testimonials from '../components/Testimonials';
 import Pricing from '../components/Pricing';
 
 export const ProductPageTemplate = ({
-    image, title, heading, description, intro, main, testimonials, fullImage, pricing,
+    image,
+    title,
+    heading,
+    description,
+    intro,
+    main,
+    testimonials,
+    fullImage,
+    pricing,
 }) => (
     <section className="section section--gradient">
         <div className="container">
@@ -20,7 +28,8 @@ export const ProductPageTemplate = ({
                                 <h2
                                     className="has-text-weight-bold is-size-1"
                                     style={{
-                                        boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
+                                        boxShadow:
+                                            '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
                                         backgroundColor: '#f40',
                                         color: 'white',
                                         padding: '1rem',
@@ -31,14 +40,18 @@ export const ProductPageTemplate = ({
                             </div>
                             <div className="columns">
                                 <div className="column is-7">
-                                    <h3 className="has-text-weight-semibold is-size-2">{heading}</h3>
+                                    <h3 className="has-text-weight-semibold is-size-2">
+                                        {heading}
+                                    </h3>
                                     <p>{description}</p>
                                 </div>
                             </div>
                             <Features gridItems={intro.blurbs} />
                             <div className="columns">
                                 <div className="column is-7">
-                                    <h3 className="has-text-weight-semibold is-size-3">{main.heading}</h3>
+                                    <h3 className="has-text-weight-semibold is-size-3">
+                                        {main.heading}
+                                    </h3>
                                     <p>{main.description}</p>
                                 </div>
                             </div>
@@ -48,7 +61,9 @@ export const ProductPageTemplate = ({
                                         <div className="tile is-parent is-vertical">
                                             <article className="tile is-child">
                                                 <img
-                                                    style={{ borderRadius: '5px' }}
+                                                    style={{
+                                                        borderRadius: '5px',
+                                                    }}
                                                     src={main.image1.image}
                                                     alt={main.image1.alt}
                                                 />
@@ -57,7 +72,9 @@ export const ProductPageTemplate = ({
                                         <div className="tile is-parent">
                                             <article className="tile is-child">
                                                 <img
-                                                    style={{ borderRadius: '5px' }}
+                                                    style={{
+                                                        borderRadius: '5px',
+                                                    }}
                                                     src={main.image2.image}
                                                     alt={main.image2.alt}
                                                 />
@@ -80,7 +97,9 @@ export const ProductPageTemplate = ({
                                 className="full-width-image-container"
                                 style={{ backgroundImage: `url(${fullImage})` }}
                             />
-                            <h2 className="has-text-weight-semibold is-size-2">{pricing.heading}</h2>
+                            <h2 className="has-text-weight-semibold is-size-2">
+                                {pricing.heading}
+                            </h2>
                             <p className="is-size-5">{pricing.description}</p>
                             <Pricing data={pricing.plans} />
                         </div>
@@ -91,6 +110,7 @@ export const ProductPageTemplate = ({
     </section>
 );
 
+// eslint-disable-next-line react/display-name
 export default ({ data }) => {
     const { frontmatter } = data.markdownRemark;
 
@@ -110,54 +130,54 @@ export default ({ data }) => {
 };
 
 export const productPageQuery = graphql`
-  query ProductPage($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      frontmatter {
-        title
-        path
-        image
-        heading
-        description
-        intro {
-          blurbs {
-            image
-            text
-          }
-          heading
-          description
+    query ProductPage($path: String!) {
+        markdownRemark(frontmatter: { path: { eq: $path } }) {
+            frontmatter {
+                title
+                path
+                image
+                heading
+                description
+                intro {
+                    blurbs {
+                        image
+                        text
+                    }
+                    heading
+                    description
+                }
+                main {
+                    heading
+                    description
+                    image1 {
+                        alt
+                        image
+                    }
+                    image2 {
+                        alt
+                        image
+                    }
+                    image3 {
+                        alt
+                        image
+                    }
+                }
+                testimonials {
+                    author
+                    quote
+                }
+                full_image
+                pricing {
+                    heading
+                    description
+                    plans {
+                        description
+                        items
+                        plan
+                        price
+                    }
+                }
+            }
         }
-        main {
-          heading
-          description
-          image1 {
-            alt
-            image
-          }
-          image2 {
-            alt
-            image
-          }
-          image3 {
-            alt
-            image
-          }
-        }
-        testimonials {
-          author
-          quote
-        }
-        full_image
-        pricing {
-          heading
-          description
-          plans {
-            description
-            items
-            plan
-            price
-          }
-        }
-      }
     }
-  }
 `;
