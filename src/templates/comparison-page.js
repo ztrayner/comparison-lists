@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 
 export const ComparisonPageTemplate = ({
     title,
-    publishDate,
+    date,
     intro,
     products,
     outro,
@@ -18,6 +18,18 @@ export const ComparisonPageTemplate = ({
                     <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
                         {title}
                     </h1>
+                    <span>Published: {date}</span>
+                    <p>{intro}</p>
+                    {products.map(product => (
+                        <article className="" key={product.heading}>
+                            {product.heading}
+                            {product.description}
+                            <a href={product.links[0].link}>
+                                Purchase on {product.links[0].source}
+                            </a>
+                        </article>
+                    ))}
+                    <p>{outro}</p>
                 </div>
             </div>
         </div>
@@ -31,6 +43,10 @@ export default ({ data }) => {
     return (
         <ComparisonPageTemplate
             title={frontmatter.title}
+            date={frontmatter.date}
+            intro={frontmatter.product_intro}
+            products={frontmatter.products}
+            outro={frontmatter.outro}
             helmet={<Helmet title={`${frontmatter.title}`} />}
         />
     );
@@ -42,6 +58,18 @@ export const comparisonPageQuery = graphql`
             frontmatter {
                 path
                 title
+                date(formatString: "MMMM DD, YYYY")
+                products {
+                    heading
+                    description
+                    product_image
+                    links {
+                        source
+                        link
+                    }
+                }
+                outro
+                comparison_intro
             }
         }
     }
