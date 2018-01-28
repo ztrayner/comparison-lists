@@ -85,15 +85,16 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
         return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
             const pagePath = node.frontmatter.path;
+            const safeTemplateKey = String(node.frontmatter.templateKey);
+            const templatePath = `src/templates/${safeTemplateKey}.js`;
+            const resolvedPath = path.resolve(templatePath);
             createPage({
                 path: pagePath,
-                component: path.resolve(
-                    `src/templates/${String(node.frontmatter.templateKey)}.js`,
-                ),
+                component: resolvedPath,
                 // additional data can be passed via context
                 context: {
-                    path: pagePath,
-                },
+                    path: pagePath
+                }
             });
         });
     });
