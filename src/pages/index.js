@@ -22,42 +22,50 @@ export default class IndexPage extends React.Component {
         const { edges: posts } = data.allMarkdownRemark;
 
         return (
-            <section className="section">
+            <div className="section">
                 <Script
                     url="https://identity.netlify.com/v1/netlify-identity-widget.js"
                     onLoad={() => this.handleScriptLoad()}
                 />
-                <div className="container">
-                    <div className="content">
-                        <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
+                <section className="">
+                    <div className="container" style={{minHeight: '40vh', display: 'flex', alignItems: 'center'}}>
+                        <h1>The best products for your baby</h1>
                     </div>
+                    <div className="container">
+                        <p>Subscribe to our weekly newsletter to get the best baby products in your inbox</p>
+                        <form className="email-registration">
+                            <input className="email-input" type="email" placeholder="Enter your email address" />
+                            <button type="submit" className="button filled">Submit</button>
+                        </form>
+                    </div>
+                </section>
+                <section className="container">
+                    <h1 className="">Latest Baby Products</h1>
                     {posts
-                        .filter(post => post.node.frontmatter.templateKey === 'blog-post')
+                        .filter(post => post.node.frontmatter.templateKey === 'comparison-page')
                         .map(({ node: post }) => (
-                            <div
-                                className="content"
-                                style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
+                            <article
+                                className="article-list-item"
                                 key={post.id}
                             >
-                                <p>
-                                    <Link className="has-text-primary" to={post.frontmatter.path}>
+                                <h1 className="inline-bloc" style={{marginTop: 0}}>
+                                    <Link to={post.frontmatter.path}>
                                         {post.frontmatter.title}
                                     </Link>
-                                    <span> &bull; </span>
-                                    <small>{post.frontmatter.date}</small>
-                                </p>
+                                </h1>
+                                <date style={{fontSize: '16px'}}>{post.frontmatter.date}</date>
                                 <p>
-                                    {post.excerpt}
+                                    {post.frontmatter.comparison_intro}
                                     <br />
                                     <br />
-                                    <Link className="button is-small" to={post.frontmatter.path}>
-                    Keep Reading →
+                                    <Link className="button primary" to={post.frontmatter.path}>
+                                        Keep Reading →
                                     </Link>
                                 </p>
-                            </div>
+                            </article>
                         ))}
-                </div>
-            </section>
+                </section>
+            </div>
         );
     }
 }
@@ -67,10 +75,9 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          excerpt(pruneLength: 400)
-          id
           frontmatter {
             title
+            comparison_intro
             templateKey
             date(formatString: "MMMM DD, YYYY")
             path

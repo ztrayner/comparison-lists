@@ -3,7 +3,7 @@ templateKey: comparison-page
 path: /baby/best-strollers-for-travel
 title: Best Strollers for Travel
 date: 2018-01-28T07:27:03.587Z
-comparison_intro: >-
+comparison_intro: |-
   Traveling requires a special kind of stroller.  Not only must it be durable
   and affordable, it is also vital that it be compact and lightweight.
 

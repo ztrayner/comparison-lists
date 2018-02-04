@@ -1,10 +1,9 @@
 {
-  "name": "gatsby-starter-netlify-cms",
-  "description": "Example Gatsby, and Netlify CMS project",
+  "name": "comparison-lists",
+  "description": "Compare products and get the best.",
   "version": "1.1.0",
-  "author": "Austin Green",
+  "author": "Zach Trayner",
   "dependencies": {
-    "bulma": "^0.6.0",
     "gatsby": "^1.9.63",
     "gatsby-link": "^1.6.21",
     "gatsby-plugin-netlify-cms": "^1.0.2",
@@ -18,16 +17,14 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-helmet": "^5.2.0",
-    "react-load-script": "0.0.6"
+    "react-load-script": "0.0.6",
+    "typeface-aleo": "^0.0.44"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
   "main": "n/a",
   "scripts": {
     "start": "npm run develop",
     "build": "gatsby build",
+    "dev": "gatsby develop",
     "develop": "gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write src/**/*.js",

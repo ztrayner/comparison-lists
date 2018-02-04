@@ -8,32 +8,33 @@ export const ComparisonPageTemplate = ({
     intro,
     products,
     outro,
-    helmet,
+    helmet
 }) => (
-    <section className="section">
+    <article className="container">
         {helmet || ''}
-        <div className="container content">
-            <div className="columns">
-                <div className="column is-10 is-offset-1">
-                    <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-                        {title}
-                    </h1>
-                    <span>Published: {date}</span>
-                    <p>{intro}</p>
-                    {products.map(product => (
-                        <article className="" key={product.heading}>
-                            {product.heading}
-                            {product.description}
-                            <a href={product.links[0].link}>
-                                Purchase on {product.links[0].source}
-                            </a>
-                        </article>
-                    ))}
-                    <p>{outro}</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section className="article-intro">
+            <h1 className="title">
+                {title}
+            </h1>
+            <date className="subtitle">{date}</date>
+            <p>{intro}</p>
+        </section>
+        <section className="products-list">
+            {products.map(product => (
+                <article className="" key={product.heading}>
+                    <h2>{product.heading}</h2>
+                    <p>{product.description}</p>
+                    <a href={product.links[0].link}>
+                            Purchase on {product.links[0].source}
+                    </a>
+                </article>
+            ))}
+        </section>
+        <section className="article-outro">
+            <h2>In Summary</h2>
+            <p>{outro}</p>
+        </section>
+    </article>
 );
 
 // eslint-disable-next-line react/display-name

@@ -1,29 +1,163 @@
-@import "~bulma/sass/utilities/initial-variables";
+$grotesque: 'super-grotesque';
+@font-face {
+  font-family: $grotesque;
+  src: url('../fonts/LabGrotesque-Regular.woff2') format('woff2'); /* Modern Browsers */
 
-// Config
-$kaldi-red: #fd461e;
-$kaldi-red-invert: #fff;
-
-$primary: $kaldi-red;
-$primary-invert: $kaldi-red-invert;
-
-// Helper Classes
-.full-width-image-container {
-  width: 100vw;
-  height: 400px;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin: 5em -50vw;
-  background-size: cover;
-  background-position: bottom;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-style: normal;
+  font-weight: 400;
 }
 
-.margin-top-0 {
-  margin-top: 0 !important;
+$header-font-family: $grotesque;
+$body-font-family: 'aleo';
+$dark: rgb(44, 49, 54);
+$red: #FF7F66;
+$white: #FFFAF0;
+$accent-color: $red;
+
+html,
+form,
+input,
+button {
+  font-family: $body-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 18px;
 }
 
-@import "~bulma";
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $header-font-family;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 62px;
+}
+
+h2 {
+  font-size: 42px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h4 {
+  font-size: 30px;
+}
+
+h5 {
+  font-size: 24px;
+}
+
+body {
+  font-family: $body-font-family;
+  line-height: 1.5;
+  margin: 0;
+  background-color: $white;
+  color: $dark;
+  -webkit-font-smoothing: antialiased;
+}
+
+//resets
+a {
+  color: $dark;
+  text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background-color: $accent-color;
+  color: #fff;
+}
+
+p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  max-width: 650px;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.navbar {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.button {
+  border: 2px solid $accent-color;
+  padding: .33rem 1.33rem;
+  color: $accent-color;
+  font-weight: 600;
+  background: none;
+  &:hover {
+    background-color: $accent-color;
+    color: $white;
+  }
+
+  &.filled {
+    background: $accent-color;
+    border-color: $accent-color;
+    color: $white;
+
+    &:hover {
+      background: none;
+      color: $accent-color;
+    }
+  }
+}
+
+date {
+  color: $accent-color;
+  font-weight: 600;
+}
+
+.title {
+  + .subtitle {
+    top: -1rem;
+    position: relative;
+  }
+}
+
+.article-list-item {
+  h1 {
+    font-size: 24px;
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+}
+
+.email-registration {
+  input {
+    width: 75%;
+    max-width: 250px;
+    padding: .33rem .33rem;
+  }
+  button {
+    margin-bottom: 1rem;
+  }
+}
+
+
+.inline-block {
+  display: inline-block;
+}

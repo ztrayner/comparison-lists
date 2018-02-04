@@ -2,14 +2,13 @@ import React from 'react';
 import graphql from 'graphql';
 import Helmet from 'react-helmet';
 import Content, { HTMLContent } from '../components/Content';
-import { log } from 'util';
 
 export const BlogPostTemplate = ({
     content,
     contentComponent,
     description,
     title,
-    helmet,
+    helmet
 }) => {
     const PostContent = contentComponent || Content;
 
