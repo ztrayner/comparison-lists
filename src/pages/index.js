@@ -34,7 +34,7 @@ export default class IndexPage extends React.Component {
                     <div className="container">
                         <p>Subscribe to our weekly newsletter to get the best baby products in your inbox</p>
                         <form className="email-registration">
-                            <input className="email-input" type="email" placeholder="Enter your email address" />
+                            <input className="email-input" type="email" placeholder="Email address" />
                             <button type="submit" className="button filled">Submit</button>
                         </form>
                     </div>
