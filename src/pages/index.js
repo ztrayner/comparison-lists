@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import Img from 'gatsby-image';
 import Script from 'react-load-script';
 import graphql from 'graphql';
 
@@ -27,8 +28,8 @@ export default class IndexPage extends React.Component {
                     url="https://identity.netlify.com/v1/netlify-identity-widget.js"
                     onLoad={() => this.handleScriptLoad()}
                 />
-                <section className="">
-                    <div className="container" style={{minHeight: '40vh', display: 'flex', alignItems: 'center'}}>
+                <section className="hero">
+                    <div className="container" style={{display: 'flex', alignItems: 'center'}}>
                         <h1>The best products for your baby</h1>
                     </div>
                     <div className="container">
@@ -38,9 +39,10 @@ export default class IndexPage extends React.Component {
                             <button type="submit" className="button filled">Submit</button>
                         </form>
                     </div>
+                    <Img sizes={data.happyBaby.childImageSharp.sizes} outerWrapperClassName="hero-image-wrapper" imgStyle={{}} />
                 </section>
-                <section className="container">
-                    <h1 className="">Latest Baby Products</h1>
+                <section className="container" style={{margin: '8rem auto'}}>
+                    <h2 className="">Our Top Baby Lists</h2>
                     {posts
                         .filter(post => post.node.frontmatter.templateKey === 'comparison-page')
                         .map(({ node: post }) => (
@@ -48,12 +50,12 @@ export default class IndexPage extends React.Component {
                                 className="article-list-item"
                                 key={post.id}
                             >
-                                <h1 className="inline-bloc" style={{marginTop: 0}}>
+                                <h1 className="inline-block" style={{marginTop: '1rem'}}>
                                     <Link to={post.frontmatter.path}>
                                         {post.frontmatter.title}
                                     </Link>
                                 </h1>
-                                <date style={{fontSize: '16px'}}>{post.frontmatter.date}</date>
+                                <span className="meta-date">{post.frontmatter.date}</span>
                                 <p>
                                     {post.frontmatter.comparison_intro}
                                     <br />
@@ -85,5 +87,12 @@ export const pageQuery = graphql`
         }
       }
     }
+    happyBaby: file(relativePath: { eq: "happy-baby.jpeg" }) {
+        childImageSharp {
+          sizes(maxWidth: 1800) {
+            ...GatsbyImageSharpSizes_withWebp_tracedSVG
+          }
+        }
+      }
   }
 `;

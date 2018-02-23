@@ -167,6 +167,10 @@ any-promise@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/any-promise/-/any-promise-0.1.0.tgz#830b680aa7e56f33451d4b049f3bd8044498ee27"
 
+any-promise@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/any-promise/-/any-promise-1.3.0.tgz#abc6afeedcea52e809cdc0376aed3ce39635d17f"
+
 anymatch@^1.3.0:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/anymatch/-/anymatch-1.3.2.tgz#553dcb8f91e3c889845dfdba34c77721b90b9d7a"
@@ -2501,7 +2505,7 @@ death@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/death/-/death-1.1.0.tgz#01aa9c401edd92750514470b8266390c66c67318"
 
-debug@2.6.9, debug@^2.2.0, debug@^2.3.2, debug@^2.3.3, debug@^2.6.0, debug@^2.6.6, debug@^2.6.8, debug@~2.6.4, debug@~2.6.6, debug@~2.6.9:
+debug@2, debug@2.6.9, debug@^2.2.0, debug@^2.3.2, debug@^2.3.3, debug@^2.6.0, debug@^2.6.6, debug@^2.6.8, debug@~2.6.4, debug@~2.6.6, debug@~2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
@@ -2598,6 +2602,10 @@ deep-extend@~0.4.0:
 deep-is@~0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
+
+deepmerge@^1.3.0:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-1.5.2.tgz#10499d868844cdad4fee0842df8c7f6f0c95a753"
 
 define-properties@^1.1.1, define-properties@^1.1.2:
   version "1.1.2"
@@ -3837,6 +3845,13 @@ gatsby-cli@^1.1.34:
     yargs "^8.0.2"
     yurnalist "^0.2.1"
 
+gatsby-image@^1.0.39:
+  version "1.0.39"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-1.0.39.tgz#2e8fdab8138e5d36839398874e51783e72e6dedc"
+  dependencies:
+    babel-runtime "^6.26.0"
+    prop-types "^15.6.0"
+
 gatsby-link@^1.6.21, gatsby-link@^1.6.36:
   version "1.6.36"
   resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.36.tgz#3f969d38e9396e2650d3804543c76881eab98feb"
@@ -3880,7 +3895,7 @@ gatsby-plugin-sass@^1.0.12:
     sass-loader "^4.1.1"
     webpack "^1.13.3"
 
-gatsby-plugin-sharp@^1.6.18, gatsby-plugin-sharp@^1.6.27:
+gatsby-plugin-sharp@^1.6.27:
   version "1.6.27"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.27.tgz#28b697d19417ec1bf5ad0d4d805d5c634ed12c46"
   dependencies:
@@ -3893,6 +3908,23 @@ gatsby-plugin-sharp@^1.6.18, gatsby-plugin-sharp@^1.6.27:
     imagemin-webp "^4.0.0"
     lodash "^4.17.4"
     potrace "^2.1.1"
+    progress "^1.1.8"
+    sharp "^0.19.0"
+    svgo "^0.7.2"
+
+gatsby-plugin-sharp@^1.6.33:
+  version "1.6.33"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.33.tgz#05044062f59232567bd8a3f8e8d5e199d210409d"
+  dependencies:
+    async "^2.1.2"
+    babel-runtime "^6.26.0"
+    bluebird "^3.5.0"
+    imagemin "^5.2.2"
+    imagemin-pngquant "^5.0.0"
+    imagemin-webp "^4.0.0"
+    lodash "^4.17.4"
+    potrace "^2.1.1"
+    probe-image-size "^3.2.0"
     progress "^1.1.8"
     sharp "^0.19.0"
     svgo "^0.7.2"
@@ -3958,14 +3990,14 @@ gatsby-transformer-remark@^1.7.17:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby-transformer-sharp@^1.6.13:
-  version "1.6.17"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-1.6.17.tgz#a0c36d02ac1ef056cccd01e27209795b2367d2b1"
+gatsby-transformer-sharp@^1.6.21:
+  version "1.6.21"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-1.6.21.tgz#90daed7a471d96ed1d49fde83baf5e18d05e1aab"
   dependencies:
     babel-runtime "^6.26.0"
     bluebird "^3.5.0"
     fs-extra "^4.0.2"
-    image-size "^0.6.0"
+    probe-image-size "^3.2.0"
 
 gatsby@^1.9.63:
   version "1.9.178"
@@ -4960,10 +4992,6 @@ ignore@^3.3.3:
 image-size@^0.5.1:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
-
-image-size@^0.6.0:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.6.2.tgz#8ee316d4298b028b965091b673d5f1537adee5b4"
 
 imagemin-pngquant@^5.0.0:
   version "5.0.1"
@@ -6748,6 +6776,10 @@ netrc@^0.1.3:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/netrc/-/netrc-0.1.4.tgz#6be94fcaca8d77ade0a9670dc460914c94472444"
 
+next-tick@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
+
 nlcst-to-string@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/nlcst-to-string/-/nlcst-to-string-2.0.1.tgz#f90f3cf905c137dc8edd8727fbcde73e73c2a1d9"
@@ -8092,6 +8124,17 @@ pretty-error@^2.0.2, pretty-error@^2.1.1:
 private@^0.1.6, private@^0.1.7:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
+
+probe-image-size@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/probe-image-size/-/probe-image-size-3.2.0.tgz#0b8d7cd6e8dce8356bec732a1d9e793bcc8aed44"
+  dependencies:
+    any-promise "^1.3.0"
+    deepmerge "^1.3.0"
+    got "^6.7.1"
+    inherits "^2.0.3"
+    next-tick "^1.0.0"
+    stream-parser "~0.3.1"
 
 process-nextick-args@~1.0.6:
   version "1.0.7"
@@ -10047,6 +10090,12 @@ stream-http@^2.3.1, stream-http@^2.7.2:
     readable-stream "^2.3.3"
     to-arraybuffer "^1.0.0"
     xtend "^4.0.0"
+
+stream-parser@~0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/stream-parser/-/stream-parser-0.3.1.tgz#1618548694420021a1182ff0af1911c129761773"
+  dependencies:
+    debug "2"
 
 stream-shift@^1.0.0:
   version "1.0.0"

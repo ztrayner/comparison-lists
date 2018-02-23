@@ -126,15 +126,33 @@ p {
   }
 }
 
-date {
+.meta-date {
   color: $accent-color;
   font-weight: 600;
+  font-size: 16px;
 }
 
 .title {
   + .subtitle {
     top: -1rem;
     position: relative;
+  }
+}
+
+.hero {
+  height: 44vw;
+  min-height: 450px;
+  max-height: 800px;
+  position: relative;
+
+  &-image-wrapper {
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -2 !important;
+    overflow: hidden;
   }
 }
 
