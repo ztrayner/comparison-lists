@@ -32,7 +32,7 @@ export default class IndexPage extends React.Component {
                     <div className="container">
                     <h1 style={{paddingTop: '4rem'}}>The best products for your baby</h1>
                         <p>Subscribe to our weekly newsletter to get the best baby products in your inbox</p>
-                        <form className="email-registration" name="email-subscribe" netlify>
+                        <form className="email-registration" name="email-subscribe" netlify="">
                             <input className="email-input" name="email" type="email" placeholder="Email address" />
                             <button type="submit" className="button filled">Submit</button>
                         </form>
