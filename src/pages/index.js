@@ -29,10 +29,8 @@ export default class IndexPage extends React.Component {
                     onLoad={() => this.handleScriptLoad()}
                 />
                 <section className="hero">
-                    <div className="container" style={{display: 'flex', alignItems: 'center'}}>
-                        <h1>The best products for your baby</h1>
-                    </div>
                     <div className="container">
+                    <h1 style={{paddingTop: '4rem'}}>The best products for your baby</h1>
                         <p>Subscribe to our weekly newsletter to get the best baby products in your inbox</p>
                         <form className="email-registration">
                             <input className="email-input" type="email" placeholder="Email address" />
