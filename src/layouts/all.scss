@@ -13,6 +13,10 @@ $dark: rgb(44, 49, 54);
 $red: #FF7F66;
 $white: #FFFAF0;
 $accent-color: $red;
+$large-screen: 1180px;
+$tablet: 840px;
+$mobile-lg: 700px;
+$mobile: 500px;
 
 html,
 form,
@@ -35,6 +39,14 @@ h5 {
 
 h1 {
   font-size: 62px;
+
+  @media screen and (max-width: $tablet) {
+    font-size: 52px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: 42px;
+  }
 }
 
 h2 {
@@ -93,14 +105,21 @@ p {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .navbar {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   margin-bottom: 2rem;
+}
+
+.logo-img {
+  margin-right: .3rem;
+}
+
+.logo-name {
+  display: inline-block;
+  vertical-align: super;
 }
 
 .button {
@@ -141,7 +160,7 @@ p {
 
 .hero {
   height: 44vw;
-  min-height: 450px;
+  min-height: 520px;
   max-height: 800px;
   position: relative;
 
@@ -153,6 +172,28 @@ p {
     left: 0;
     z-index: -2 !important;
     overflow: hidden;
+
+    img {
+      @media screen and (max-width: $large-screen) {
+        width: 120% !important;
+      }
+
+      @media screen and (max-width: $mobile-lg) {
+        width: 140% !important;
+      }
+    }
+  }
+  .gatsby-image-wrapper {
+    height: 100%;
+  }
+}
+
+.form-callout {
+  font-size: 24px;
+  max-width: 440px;
+  @media screen and (max-width: $large-screen) {
+    font-size: 22px;
+    max-width: 350px;
   }
 }
 

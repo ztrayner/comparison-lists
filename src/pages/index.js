@@ -30,15 +30,15 @@ export default class IndexPage extends React.Component {
                 />
                 <section className="hero">
                     <div className="container">
-                    <h1 style={{paddingTop: '4rem'}}>The best products for your baby</h1>
-                        <p>Subscribe to our weekly newsletter to get the best baby products in your inbox</p>
+                    <h1 style={{paddingTop: '4rem'}}>The best products for your&nbsp;baby</h1>
+                        <p className="form-callout">Subscribe to our weekly newsletter to get the best baby products in your&nbsp;inbox</p>
                         <form className="email-registration" name="email-subscribe" method="post" data-netlify="true">
                             <input type="hidden" name="form-name" value="email-subscribe" />
                             <input className="email-input" name="email" type="email" placeholder="Email address" />
                             <button type="submit" className="button filled">Submit</button>
                         </form>
                     </div>
-                    <Img sizes={data.happyBaby.childImageSharp.sizes} outerWrapperClassName="hero-image-wrapper" imgStyle={{}} />
+                    <Img sizes={data.happyBaby.childImageSharp.sizes} outerWrapperClassName="hero-image-wrapper" imgStyle={{objectPosition: 'center top'}} />
                 </section>
                 <section className="container" style={{margin: '8rem auto'}}>
                     <h2 className="">Our Top Baby Lists</h2>
