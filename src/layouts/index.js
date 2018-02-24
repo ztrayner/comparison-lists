@@ -8,7 +8,7 @@ import './all.scss';
 
 const TemplateWrapper = ({ children }) => (
     <div>
-        <Helmet title="Home | Comparison Lists" />
+        <Helmet title="Binkies & Babies" />
         <Navbar />
         <main>{children()}</main>
     </div>
