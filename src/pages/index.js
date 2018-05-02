@@ -57,12 +57,10 @@ export default class IndexPage extends React.Component {
                                 <span className="meta-date">{post.frontmatter.date}</span>
                                 <p>
                                     {post.frontmatter.comparison_intro}
-                                    <br />
-                                    <br />
-                                    <Link className="button primary" to={post.frontmatter.path}>
-                                        Keep Reading →
-                                    </Link>
                                 </p>
+                                <Link className="button primary" to={post.frontmatter.path}>
+                                        Keep Reading →
+                                </Link>
                             </article>
                         ))}
                 </section>

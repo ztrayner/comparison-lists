@@ -209,6 +209,14 @@ p {
     margin-right: 1rem;
     margin-bottom: 0;
   }
+
+  p {
+    max-width: 620px;
+  }
+
+  .button {
+    display: inline-block;
+  }
 }
 
 .email-registration {
