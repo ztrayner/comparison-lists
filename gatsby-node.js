@@ -49,11 +49,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             const resolvedPath = path.resolve(templatePath);
             createPage({
                 path: pagePath,
-                component: resolvedPath,
-                // additional data can be passed via context
-                context: {
-                    path: pagePath
-                }
+                component: resolvedPath
             });
         });
     });
